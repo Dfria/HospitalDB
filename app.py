@@ -21,6 +21,8 @@ app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 
 @app.route("/")
 def hello():
+    cursor = db.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute('''CREATE TABLE accounts (user_id INT(9), password VARCHAR(32), ''')
     return render_template("form.html")
 
 
