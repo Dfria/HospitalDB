@@ -11,10 +11,10 @@ import json
 app = Flask(__name__)
 db = MySQL(app)
 
-app.config['MYSQL_USER'] = 'kcpfar0g2e7hgqbe'
-app.config['MYSQL_PASSWORD'] = 'j51sb4ak6b9tpup0'
-app.config['MYSQL_HOST'] = 'd6rii63wp64rsfb5.cbetxkdyhwsb.us-east-1.rds.amazonaws.com'
-app.config['MYSQL_DB'] = 'fzscfmwkq57p3pdd'
+app.config['MYSQL_USER'] = 'fjjcoreudogl1fxb'
+app.config['MYSQL_PASSWORD'] = 'zuiyjci4038yq91m'
+app.config['MYSQL_HOST'] = 'xlf3ljx3beaucz9x.cbetxkdyhwsb.us-east-1.rds.amazonaws.com'
+app.config['MYSQL_DB'] = 'u9zs3sxzsl1bf3ly'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
@@ -35,16 +35,16 @@ def login():
     if request.method == 'GET':
         return "Login via the login Form"
 
-    if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
-        username = request.form['username']
+    if request.method == 'POST' and 'account_id' in request.form and 'password' in request.form:
+        user_id = request.form['user_id']
         password = request.form['password']
         cursor = db.connection.cursor(MySQLdb.cursors.DictCursor)
-        # cursor.execute('''CREATE TABLE accounts (username VARCHAR(16), password VARCHAR(32), email VARCHAR(32))''')
-        cursor.execute('SELECT * FROM accounts WHERE username = %s AND password = %s', (username, password))
+        cursor.execute('''CREATE TABLE accounts (user_id INT(9), password VARCHAR(32), ''')
+        # cursor.execute('SELECT * FROM accounts WHERE user_id = %s AND password = %s', (user_id, password))
         account = cursor.fetchone()
         if account:
             session['loggedin'] = True
-            session['username'] = account['username']
+            session['user_id'] = account['user_id']
             session['password'] = account['password']
             return 'Logged in successfully !'
         else:
