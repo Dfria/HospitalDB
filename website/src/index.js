@@ -1,13 +1,14 @@
 import React from 'react';
 import App from './App';
+import Schedule from './Schedule';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Login from './Login';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    {/*<Schedule/>*/}
   </React.StrictMode>,
   document.getElementById('root')
 );
