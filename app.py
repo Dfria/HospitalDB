@@ -7,6 +7,8 @@ import json
 app = Flask(__name__)
 app.secret_key = "lesgo"
 
+# Connecting app to DB
+
 app.config['MYSQL_USER'] = 'fjjcoreudogl1fxb'
 app.config['MYSQL_PASSWORD'] = 'zuiyjci4038yq91m'
 app.config['MYSQL_HOST'] = 'xlf3ljx3beaucz9x.cbetxkdyhwsb.us-east-1.rds.amazonaws.com'
@@ -17,17 +19,20 @@ db = MySQL(app)
 
 @app.route("/")
 def index():
-    # cursor = db.connection.cursor(MySQLdb.cursors.DictCursor)
-    # cursor.execute('''CREATE TABLE accounts (userid INTEGER, password VARCHAR(32))''')
-    # cursor.execute('''INSERT INTO accounts VALUES(30217890, "abc123")''')
-    # cursor.connection.commit()
+    # declaring tables for DB:
+
+    #cursor = db.connection.cursor(MySQLdb.cursors.DictCursor)
+    #cursor.execute('''CREATE TABLE person (userid INTEGER, password VARCHAR(30), first_name VARCHAR(30), last_name VARCHAR(30), birth_date date, email_address VARCHAR(50), address VARCHAR(60), patient_patient_id INTEGER, physician_physician_id INTEGER)''')
+    #cursor.execute('''CREATE TABLE patient (patient_id INTEGER)''')
+    #cursor.execute('''CREATE TABLE physician (pysician_id INTEGER, clinic_address VARCHAR(60))''')
+    #cursor.execute('''CREATE TABLE appointment (appointment_id INTEGER, description VARCHAR(300), patient_patient_id INTEGER, availability_availability_id INTEGER)''')
+    #cursor.execute('''CREATE TABLE availability (availability_id INTEGER, start_time date, end_time date, physician_physician_id INTEGER)''')
+    #cursor.execute('''INSERT INTO accounts VALUES(30217890, "abc123")''')
+    #cursor.connection.commit()
+
     return render_template("form.html")
 
-
-@app.route('/newaccount')
-def newaccount():
-    return render_template('create.html')
-
+# Login method
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
