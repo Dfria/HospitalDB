@@ -1,12 +1,7 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './LandingPage.css';
 
-class Login extends Component {
-    constructor(props) {
-      super(props);
-    }
-  
-    render() {
+function LandingPage() {
       return (
         <html>
             <head>
@@ -104,6 +99,5 @@ class Login extends Component {
         </html>
       )
     }
-  }
   
-  export default Login;
+  export default LandingPage;

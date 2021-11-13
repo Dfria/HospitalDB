@@ -1,6 +1,6 @@
 import React from 'react';
 import App from './App';
-import Schedule from './Schedule';
+
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';

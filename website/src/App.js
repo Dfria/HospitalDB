@@ -1,20 +1,22 @@
 import React from 'react';
 import './App.css';
-import Login from './Login';
 import LandingPage from './LandingPage';
-import {BrowserRouter, useRoutes, Routes, Route} from 'react-router-dom';
+import Login from './Login';
+import Schedule from './Schedule';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 function App() {
     return (
-        <BrowserRouter>
+        <Router>
             <div className="App">
-                <Routes>
-                    <Route path="/" component={Home}/>
-                    <Route path="/login" component={Login}/>
-                </Routes>
-                
+                <Switch>
+                    <Route path="/" exact component={Home}/>
+                    <Route path="/login" exact component={Login}/>
+                    <Route path="/landingpage" exact component={LandingPage}/>
+                    <Route path="/schedule" exact component={Schedule}/>
+                </Switch>   
             </div>
-        </BrowserRouter>
+        </Router>
     );
 }
 

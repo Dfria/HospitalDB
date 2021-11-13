@@ -1,19 +1,14 @@
 import React, {Component} from 'react';
 import './Schedule.css';
 
-class Schedule extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
+function Schedule() {
     return (
         <div>
             <body>
                 <h1 id="title">Make an Appoinment</h1>
                 <p id="description">Thank you for choosing us</p>
                 <div>
-                    <form id="survey-form">
+                    <form id="appointment-form">
                         <label id="name-label">Name</label>
                         <br/>
                         <input id="name" class="input" type="text" placeholder="Enter your name" required/>
@@ -85,7 +80,6 @@ class Schedule extends Component {
             </body>
         </div>
     )
-  }
 }
 
 export default Schedule;

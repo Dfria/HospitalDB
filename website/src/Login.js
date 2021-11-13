@@ -1,12 +1,7 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './Login.css';
 
-class Login extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
+function Login() {
     return (
       <div>
           <div class="login">Login</div>
@@ -34,7 +29,6 @@ class Login extends Component {
           </div>
       </div>
     )
-  }
 }
 
 export default Login;
